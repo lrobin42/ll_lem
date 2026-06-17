@@ -1,12 +1,5 @@
-use burn::backend::NdArray;
-use burn::backend::ndarray::NdArrayDevice;
-use burn::nn::{Embedding, EmbeddingConfig};
-use burn::tensor::{Int, Tensor, backend::Backend};
-use burn::tensor::{Shape, TensorData};
 mod preprocessing;
 use preprocessing::*;
-use regex::Regex;
-use std::error::Error;
 use std::fs;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
