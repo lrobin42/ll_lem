@@ -23,27 +23,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let (x_inputs, y_targets) = create_x_y_vectors(&tokens);
 
-    //create the token embedding
+    //create the token embeddings
     let embeddings = create_embeddings(&tokens);
 
-    //generate positional embeddings
-    // let context_length: usize = 256;
-    // let output_dim: usize = 256;
-    // let device = NdArrayDevice::Cpu;
-    // // Create the positional embedding layer
-    // let pos_embedding_layer: Embedding<NdArray> =
-    //     EmbeddingConfig::new(context_length, output_dim).init(&device);
-
-    // // Equivalent of torch.arange(context_length) — positions [0, 1, 2, ..., 255]
-    // let positions: Vec<i32> = (0..context_length as i32).collect();
-    // let pos_tensor: Tensor<NdArray, 2, Int> = Tensor::from_ints(
-    //     TensorData::new(positions, Shape::new([1, context_length])),
-    //     &device,
-    // );
-
-    // // Forward pass — equivalent of pos_embedding_layer(torch.arange(context_length))
+    //add positional embeddings
     let pos_embeddings = add_positional_embeddings();
-    // println!("{:?}", pos_embeddings);
 
     Ok(())
 }
